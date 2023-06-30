@@ -22,5 +22,7 @@ public class Segmento implements Serializable {
 	private Long idSegmento;
 	
 	private String nombre;
+	
+	private String descripcion;
 
 }

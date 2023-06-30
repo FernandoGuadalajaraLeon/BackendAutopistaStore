@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,6 +32,7 @@ public class Producto implements Serializable{
 	
 	private int codigo;
 	
+	@ManyToOne
 	private Proveedor proveedor;
 	
 	private int cantidadStock;
