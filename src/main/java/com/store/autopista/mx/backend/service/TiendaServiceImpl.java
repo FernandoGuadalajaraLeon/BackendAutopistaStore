@@ -15,8 +15,7 @@ public class TiendaServiceImpl implements TiendaService {
 	}
 
 	@Override
-	public TiendaDto updateDireccion(Tienda tienda) {
-		
+	public TiendaDto update(Tienda entity) {
 		return null;
 	}
 

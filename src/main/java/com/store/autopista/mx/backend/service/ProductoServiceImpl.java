@@ -7,44 +7,47 @@ import com.store.autopista.mx.backend.dto.ProductoDto;
 import com.store.autopista.mx.backend.entity.Producto;
 import com.store.autopista.mx.backend.repository.ProductoRepository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class ProductoServiceImpl implements ProductoService {
 	
 	@Autowired
-	ProductoRepository productoRepository;
+	ProductoRepository repository;
 
 	@Override
 	public ProductoDto save(Producto producto) {
 		
-		return new ProductoDto( productoRepository.save(producto));
+		return new ProductoDto( repository.save(producto));
 	}
 
 	@Override
 	public ProductoDto update(Producto producto) {
-		
-		Producto prod = productoRepository.findById(producto.getIdProducto()).orElse(null);
-		
-		prod = producto;
-		return new ProductoDto( productoRepository.save(prod));
+
+		return new ProductoDto( repository.save(producto));
 	}
 
 	@Override
 	public void delete(Producto producto) {
-		
-		productoRepository.delete(producto);
+
+		repository.delete(producto);
 	}
 
 	@Override
 	public ProductoDto get(Long id) {
 		
-		return productoRepository.findById(id)
+		return repository.findById(id)
 				.map(prod -> new ProductoDto(prod)).orElse(null);
 	}
 
 	@Override
-	public ProductoDto getByProveedor(Long id) {
-		
-		return null;
+	public List<ProductoDto> getByProveedor(Long id) {
+		List<ProductoDto> prodDto = new ArrayList<>();
+
+		repository.getByProveedor(id).forEach(prod -> prodDto.add(new ProductoDto(prod)));
+
+		return prodDto;
 	}
 
 }

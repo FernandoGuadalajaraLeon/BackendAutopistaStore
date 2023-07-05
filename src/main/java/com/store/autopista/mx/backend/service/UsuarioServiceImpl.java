@@ -15,8 +15,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public UsuarioDto updateDireccion(Usuario usuario) {
-		
+	public UsuarioDto update(Usuario entity) {
 		return null;
 	}
 
