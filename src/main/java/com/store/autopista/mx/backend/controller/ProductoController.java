@@ -25,6 +25,13 @@ import java.util.List;
 @RequestMapping("/producto")
 public class ProductoController extends CommonController<ProductoDto, Producto, ProductoService> {
 
+
+	@GetMapping("/getAll")
+	public ResponseEntity<?> getAll() {
+
+		return new ResponseEntity<List<ProductoDto>>(service.getAll(), HttpStatus.OK);
+	}
+
 	@GetMapping("/getByProveedor")
 	public ResponseEntity<?> getByProveedor(@RequestParam Long id) {
 

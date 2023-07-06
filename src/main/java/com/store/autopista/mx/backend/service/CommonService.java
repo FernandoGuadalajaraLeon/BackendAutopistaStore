@@ -1,5 +1,7 @@
 package com.store.autopista.mx.backend.service;
 
+import java.util.List;
+
 public interface CommonService<D,E> {
     D save(E entity);
 
@@ -7,6 +9,6 @@ public interface CommonService<D,E> {
 
     void delete(E entity);
 
-    D get(Long id);
+    D getById(Long id);
 
 }

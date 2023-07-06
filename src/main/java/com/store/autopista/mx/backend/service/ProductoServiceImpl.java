@@ -35,16 +35,23 @@ public class ProductoServiceImpl implements ProductoService {
 	}
 
 	@Override
-	public ProductoDto get(Long id) {
+	public ProductoDto getById(Long id) {
 		
 		return repository.findById(id)
 				.map(prod -> new ProductoDto(prod)).orElse(null);
 	}
 
 	@Override
+	public List<ProductoDto> getAll() {
+		List<ProductoDto> prodDto = new ArrayList<>();
+		repository.findAll().forEach(prod -> prodDto.add(new ProductoDto(prod)));
+
+		return prodDto;
+	}
+
+	@Override
 	public List<ProductoDto> getByProveedor(Long id) {
 		List<ProductoDto> prodDto = new ArrayList<>();
-
 		repository.getByProveedor(id).forEach(prod -> prodDto.add(new ProductoDto(prod)));
 
 		return prodDto;

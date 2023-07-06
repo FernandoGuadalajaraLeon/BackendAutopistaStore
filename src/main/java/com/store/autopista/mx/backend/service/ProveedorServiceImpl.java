@@ -32,7 +32,7 @@ public class ProveedorServiceImpl implements ProveedorService {
 	}
 
 	@Override
-	public ProveedorDto get(Long id) {
+	public ProveedorDto getById(Long id) {
 
 		return repository.findById(id)
 				.map(prod -> new ProveedorDto(prod)).orElse(null);

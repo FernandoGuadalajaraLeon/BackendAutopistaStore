@@ -26,7 +26,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public UsuarioDto get(Long id) {
+	public UsuarioDto getById(Long id) {
 		
 		return null;
 	}

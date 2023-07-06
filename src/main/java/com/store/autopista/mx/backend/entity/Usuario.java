@@ -28,10 +28,12 @@ public class Usuario implements Serializable {
 	
 	private String password;
 	
-	private boolean admin;
+	private String rol;
 	
 	private Date fechaAlta;
 	
 	private Tienda tienda;
+
+	private boolean activo;
 
 }

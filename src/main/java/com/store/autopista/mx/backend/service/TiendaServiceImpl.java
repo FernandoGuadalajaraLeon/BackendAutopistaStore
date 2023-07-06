@@ -26,7 +26,7 @@ public class TiendaServiceImpl implements TiendaService {
 	}
 
 	@Override
-	public TiendaDto get(Long id) {
+	public TiendaDto getById(Long id) {
 		
 		return null;
 	}

@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface ProductoService extends CommonService<ProductoDto, Producto> {
 
+	List<ProductoDto> getAll();
+
 	List<ProductoDto> getByProveedor(Long id);
 
 }

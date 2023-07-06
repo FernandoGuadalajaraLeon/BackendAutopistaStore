@@ -9,4 +9,5 @@ public interface TicketService extends CommonService<TicketDto, Ticket> {
 	
 	TicketDto getByDate(Date date);
 
+	boolean cancelTicket(Long idTicket);
 }

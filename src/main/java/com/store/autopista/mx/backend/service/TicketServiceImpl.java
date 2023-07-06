@@ -34,7 +34,7 @@ public class TicketServiceImpl implements TicketService {
 	}
 
 	@Override
-	public TicketDto get(Long id) {
+	public TicketDto getById(Long id) {
 
 		return repository.findById(id)
 				.map(prod -> new TicketDto(prod)).orElse(null);
@@ -42,8 +42,20 @@ public class TicketServiceImpl implements TicketService {
 
 	@Override
 	public TicketDto getByDate(Date date) {
-		
+
 		return null;
+	}
+
+	@Override
+	public boolean cancelTicket(Long idTicket) {
+		Ticket ticket = repository.findById(idTicket).orElse(null);
+
+		if(ticket != null){
+			repository.save(ticket);
+			return Boolean.TRUE;
+		}else return Boolean.FALSE;
+
+
 	}
 
 }

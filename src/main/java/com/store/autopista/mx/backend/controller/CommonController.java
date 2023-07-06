@@ -33,10 +33,10 @@ public class CommonController<D, E, S extends CommonService<D, E>> {
 		}
 	}
 	
-	@GetMapping("/get")
+	@GetMapping("/getById")
 	public ResponseEntity<?> get(@RequestParam Long id) {
 
-		return new ResponseEntity<D>(service.get(id), HttpStatus.OK);
+		return new ResponseEntity<D>(service.getById(id), HttpStatus.OK);
 	}
 	
 }

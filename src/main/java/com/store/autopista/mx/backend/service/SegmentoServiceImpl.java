@@ -33,7 +33,7 @@ public class SegmentoServiceImpl implements SegmentoService {
 	}
 
 	@Override
-	public SegmentoDto get(Long id) {
+	public SegmentoDto getById(Long id) {
 
 		return repository.findById(id)
 				.map(seg -> new SegmentoDto(seg)).orElse(null);

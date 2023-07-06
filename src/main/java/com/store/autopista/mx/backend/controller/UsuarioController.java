@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/proveedor")
+@RequestMapping("/usuario")
 public class UsuarioController extends CommonController<UsuarioDto, Usuario, UsuarioService> {
 
 	

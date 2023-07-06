@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/proveedor")
+@RequestMapping("/segmento")
 public class SegmentoController extends CommonController<SegmentoDto, Segmento, SegmentoService> {
 
 	
