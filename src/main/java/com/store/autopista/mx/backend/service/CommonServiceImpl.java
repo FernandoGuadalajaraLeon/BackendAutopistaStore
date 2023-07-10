@@ -1,10 +1,5 @@
 package com.store.autopista.mx.backend.service;
 
-import com.store.autopista.mx.backend.dto.ProductoDto;
-import com.store.autopista.mx.backend.entity.Producto;
-import com.store.autopista.mx.backend.repository.ProductoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 @Service

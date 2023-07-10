@@ -2,11 +2,9 @@ package com.store.autopista.mx.backend.entity;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,15 +18,16 @@ public class Usuario implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long isUsuario;
+	private Long idUsuario;
 	
 	private String nombre;
 	
 	private String apellido;
 	
 	private String password;
-	
-	private String rol;
+
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Rol> roles;
 	
 	private Date fechaAlta;
 	

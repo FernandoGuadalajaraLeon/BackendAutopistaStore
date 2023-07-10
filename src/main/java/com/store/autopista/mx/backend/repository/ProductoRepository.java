@@ -9,5 +9,5 @@ import com.store.autopista.mx.backend.entity.Proveedor;
 
 public interface ProductoRepository extends CrudRepository<Producto, Long> {
 
-	List<Producto> getByProveedor(Long id);
+	List<Producto> getByProveedor(Proveedor prov);
 }

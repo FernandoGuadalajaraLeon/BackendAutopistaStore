@@ -1,6 +1,5 @@
 package com.store.autopista.mx.backend.service;
 
-import com.store.autopista.mx.backend.dto.ProveedorDto;
 import com.store.autopista.mx.backend.repository.SegmentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
