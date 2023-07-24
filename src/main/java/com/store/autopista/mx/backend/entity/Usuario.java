@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +20,8 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idUsuario;
 	
+	private String username;
+	
 	private String nombre;
 	
 	private String apellido;
@@ -27,10 +29,12 @@ public class Usuario implements Serializable {
 	private String password;
 
 	@OneToMany(cascade = CascadeType.ALL)
-	private List<Rol> roles;
+	@JoinColumn(name = "user_id")
+	private List<Role> roles;
 	
 	private Date fechaAlta;
 	
+	@OneToOne(cascade = CascadeType.ALL)
 	private Tienda tienda;
 
 	private boolean activo;
