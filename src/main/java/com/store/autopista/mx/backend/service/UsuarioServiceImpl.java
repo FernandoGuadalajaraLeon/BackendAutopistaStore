@@ -6,7 +6,7 @@ import com.store.autopista.mx.backend.dto.UsuarioDto;
 import com.store.autopista.mx.backend.entity.Usuario;
 
 @Service
-public class UsuarioServiceImpl implements UsuarioService	 {
+public class UsuarioServiceImpl implements UsuarioService {
 
 	@Override
 	public UsuarioDto save(Usuario usuario) {
@@ -30,8 +30,5 @@ public class UsuarioServiceImpl implements UsuarioService	 {
 		
 		return null;
 	}
-
-
-
 
 }

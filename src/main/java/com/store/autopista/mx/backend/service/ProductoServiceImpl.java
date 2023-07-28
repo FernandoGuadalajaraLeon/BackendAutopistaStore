@@ -1,7 +1,5 @@
 package com.store.autopista.mx.backend.service;
 
-import com.store.autopista.mx.backend.entity.Proveedor;
-import com.store.autopista.mx.backend.repository.ProveedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,16 +9,12 @@ import com.store.autopista.mx.backend.repository.ProductoRepository;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ProductoServiceImpl implements ProductoService {
 	
 	@Autowired
 	ProductoRepository repository;
-
-	@Autowired
-	ProveedorRepository proveedorRepositoryepository;
 
 	@Override
 	public ProductoDto save(Producto producto) {
@@ -57,16 +51,10 @@ public class ProductoServiceImpl implements ProductoService {
 
 	@Override
 	public List<ProductoDto> getByProveedor(Long id) {
-		/*List<ProductoDto> prodDto = new ArrayList<>();
+		List<ProductoDto> prodDto = new ArrayList<>();
 		repository.getByProveedor(id).forEach(prod -> prodDto.add(new ProductoDto(prod)));
 
-		return prodDto;*/
-
-		return  repository.getByProveedor(proveedorRepositoryepository.findById(id).orElse( new Proveedor() ))
-				.stream().map(producto -> new ProductoDto( producto ))
-				.collect(Collectors.toList());
-
+		return prodDto;
 	}
 
 }
-

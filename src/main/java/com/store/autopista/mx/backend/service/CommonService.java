@@ -1,5 +1,6 @@
 package com.store.autopista.mx.backend.service;
 
+import java.util.List;
 
 public interface CommonService<D,E> {
     D save(E entity);

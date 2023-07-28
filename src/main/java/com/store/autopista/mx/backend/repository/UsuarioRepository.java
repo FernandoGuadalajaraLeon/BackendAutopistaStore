@@ -6,6 +6,4 @@ import com.store.autopista.mx.backend.entity.Usuario;
 
 public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
 
-    Usuario findByNombre(String nombre);
-
 }

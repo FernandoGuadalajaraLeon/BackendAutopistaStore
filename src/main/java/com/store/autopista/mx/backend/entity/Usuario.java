@@ -27,7 +27,7 @@ public class Usuario implements Serializable {
 	private String apellido;
 	
 	private String password;
-
+	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_id")
 	private List<Role> roles;

@@ -2,6 +2,7 @@ package com.store.autopista.mx.backend.service;
 
 import java.sql.Date;
 
+import com.store.autopista.mx.backend.dto.ProductoDto;
 import com.store.autopista.mx.backend.repository.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
