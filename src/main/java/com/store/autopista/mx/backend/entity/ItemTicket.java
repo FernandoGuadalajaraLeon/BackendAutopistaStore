@@ -20,7 +20,7 @@ public class ItemTicket implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Producto producto;
 
-    public Double getPrecioTotal(){
+    public double getPrecioTotal(){
         return Double.valueOf(this.cantidad) * this.producto.getPrecioVenta();
     }
 

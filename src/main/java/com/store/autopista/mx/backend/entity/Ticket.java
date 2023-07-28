@@ -2,6 +2,7 @@ package com.store.autopista.mx.backend.entity;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
 import jakarta.persistence.*;
 
@@ -23,12 +24,20 @@ public class Ticket implements Serializable {
 	
 	private Date fecha;
 	
-	private Producto producto;
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<ItemTicket> items;
 	
 	private  int cantidad;
 	
+	private boolean cancelado;
+	
 	private double precioFinal;
 	
-	private boolean cancelado;
+	public double getPrecioFinal() {
+		precioFinal = 0;
+		this.items.forEach(item -> precioFinal += item.getPrecioTotal());
+		
+		return precioFinal;
+	}
 
 }
