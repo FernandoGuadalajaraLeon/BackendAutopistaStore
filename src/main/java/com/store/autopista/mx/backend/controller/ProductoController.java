@@ -16,8 +16,7 @@ import com.store.autopista.mx.backend.service.ProductoService;
 @RestController
 @RequestMapping("/producto")
 public class ProductoController extends CommonController<ProductoDto, Producto, ProductoService> {
-
-
+	
 	@GetMapping("/getAll")
 	public ResponseEntity<?> getAll() {
 

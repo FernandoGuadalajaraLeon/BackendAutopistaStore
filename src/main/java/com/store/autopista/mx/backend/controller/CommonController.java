@@ -35,8 +35,18 @@ public class CommonController<D, E, S extends CommonService<D, E>> {
 	
 	@GetMapping("/getById")
 	public ResponseEntity<?> get(@RequestParam Long id) {
+		
+		try {
+			if(service.getById(id) != null) {
+			return new ResponseEntity<D>(service.getById(id), HttpStatus.OK);
+		}else {
+			return new ResponseEntity<D>(service.getById(id), HttpStatus.NOT_FOUND);
+		}
+		} catch (Exception e) {
+			return new ResponseEntity<D>(service.getById(id), HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
 
-		return new ResponseEntity<D>(service.getById(id), HttpStatus.OK);
 	}
 	
 }

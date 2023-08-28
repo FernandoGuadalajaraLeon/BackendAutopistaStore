@@ -5,7 +5,9 @@ import org.springframework.stereotype.Service;
 
 import com.store.autopista.mx.backend.dto.ProductoDto;
 import com.store.autopista.mx.backend.entity.Producto;
+import com.store.autopista.mx.backend.entity.Proveedor;
 import com.store.autopista.mx.backend.repository.ProductoRepository;
+import com.store.autopista.mx.backend.repository.ProveedorRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,9 @@ public class ProductoServiceImpl implements ProductoService {
 	
 	@Autowired
 	ProductoRepository repository;
+	
+	@Autowired
+	ProveedorRepository proveedorRepository;
 
 	@Override
 	public ProductoDto save(Producto producto) {
@@ -51,8 +56,11 @@ public class ProductoServiceImpl implements ProductoService {
 
 	@Override
 	public List<ProductoDto> getByProveedor(Long id) {
+
+		Proveedor prov = proveedorRepository.findById(id).orElse(null);
+		
 		List<ProductoDto> prodDto = new ArrayList<>();
-		repository.getByProveedor(id).forEach(prod -> prodDto.add(new ProductoDto(prod)));
+		repository.getByProveedor(prov).forEach(prod -> prodDto.add(new ProductoDto(prod)));
 
 		return prodDto;
 	}
